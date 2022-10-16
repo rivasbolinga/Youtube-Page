@@ -2,399 +2,198 @@
 <html>
   <title>Youtube video player</title>
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="video-metadata.css"
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    
     <style>
-      .header {
-        display: flex;
-        height: 57px;
-        border-bottom: 1px solid #dedede;
-        margin-bottom: 20px px;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background-color: white;
-        z-index: 100;
-      }
-      .left-section {
-        display: flex;
-        align-items: center;
-      }
-
-      .middle-section {
-        flex: 1;
-        display: flex;
-        margin-left: 70px;
-        margin-right: 35px;
-        max-width: 500px;
-        align-items: center;
-      }
-      .rigth-section {
-        width: 180px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        flex-shrink: 0;
-      }
-
-      .hamburger-icon {
-        cursor: pointer;
-        height: 25px;
-        margin-right: 20px;
-        margin-left: 20px;
-      }
-      .youtube-logo {
-        cursor: pointer;
-        height: 20px;
-      }
-      .search-bar {
-        cursor: text;
-        flex: 1;
-        height: 34px;
-        padding-left: 10px;
-        font-size: 16px;
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgb(200, 196, 196);
-        border-radius: 2px;
-        box-shadow: inset 1px 2px 3px rga(0, 0, 0, 0.05);
-      }
-      .search-bar::placeholder {
-        font-family: Roboto, Arial;
-        font-size: 16px;
-        padding-left: 8px;
-      }
-      .search-btn {
-        position: relative;
-        cursor: pointer;
-        height: 38px;
-        width: 66px;
-        background-color: rgb(240, 240, 240);
-        border-width: 1px;
-        border-style: solid;
-        border-color: rgb(192, 192, 192);
-        margin-left: -1px;
-        margin-right: 10px;
-      }
-      .voice-btn {
-        cursor: pointer;
-        height: 40px;
-        width: 40px;
-        border-radius: 20px;
-        border: none;
-        background-color: rgba(226, 226, 226, 0.676);
-      }
-
-      .search-icon {
-        height: 25px;
-      }
-
-      .upload-icon {
-        cursor: pointer;
-        height: 24px;
-        margin-right: 2px;
-        position: relative;
-      }
-
-      .notifications-icon {
-        cursor: pointer;
-        height: 24px;
-        width: 24px;
-        position: relative;
-        margin-right: 2px;
-      }
-      .channel-pic {
-        cursor: pointer;
-        height: 32px;
-        position: relative;
-        border-radius: 16px;
-        margin-right: 30px;
-      }
-
+      
       .center {
+    
         margin-top: 58px;
         background-color: rgba(233, 233, 233, 0.418);
         display: grid;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 980px 380px;
+        column-gap: 5px;
       }
 
       .main {
+       
         margin-top: 24px;
-        
         margin-left: 18px;
       }
-      .video-hast {
-        color: rgb(51, 86, 210);
-        font-size: 14px;
-        margin-top: 7px;
+  
+      .comments-section{
+        display: grid;
+  
       }
-      .video-title {
-        padding-top: 7px;
+      .comments-filter{
+        margin-top: 30px;
+        display: grid;
+        width: 300px;
+        grid-template-columns: 1fr 1fr ;
+        column-gap: 6px;
+        font-size: 15px;
         font-family: "Roboto", Arial, sans-serif;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 20px;
       }
-     
-      .video-views {
-        text-align: left;
-        padding-top: 10px;
-        width: 615px;
+      .order{
+        display:grid;
+        grid-template-columns: 20px 130px;
+        column-gap: 10px;
       }
-      .video-interactions {
-        width: 700px;;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        margin-top: 20px;
-        display: grid;
-        grid-template-columns: 0.5fr 1fr 1fr 1fr 0.7fr 1fr 0.5fr;
-      }
-      
-      .like{
-        display: grid;
-        grid-template-columns: 0.5fr 2fr;
-        align-items: center;
-         justify-content: center;
-      }
-      
-      .like-icon {
+      .order-icon{
         height: 20px;
       }
-     
-      .likes {
-        margin-left: 8px;
-        font-size: 14px;
-        font-family: Roboto, Arial, sans-serif;
-        font-weight: bold;
-      }
-      .not-like{
+      .all-comments{
         display: grid;
-        grid-template-columns: 0.5fr 2fr;
-        align-items: center;
-         justify-content: center;
+        margin-top: 50px;
+        row-gap: 10px;
+        width: 950px;
       }
-      .not-like-icon{
-        height: 20px;
-      }
-      .not-like-text{
-        
-        font-size: 14px;
-        font-family: Roboto, Arial, sans-serif;
-        font-weight: bold;
-      }
-      .share{
+      .comment-1{
         display: grid;
-        grid-template-columns: 0.5fr 2fr;
-        align-items: center;
-         justify-content: center;
+        grid-template-columns: 40px 800px;
+        column-gap: 10px;
       }
-      
-      .share-icon {
-        height: 20px;
-        
+      .comment-pic{
+        height: 40px;
+        width: 40px;
+        border-radius: 20px;
       }
-     
-      .share-text {
-        
-        font-size: 14px;
-        font-family: Roboto, Arial, sans-serif;
-        font-weight: bold;
-      }
-      .download{
+      .comment-details{
         display: grid;
-        grid-template-columns: 0.5fr 2fr;
-        align-items: center;
-         justify-content: center;
+        row-gap: 10px;
       }
-      
-      .download-icon {
-        height: 20px;
-        
-      }
-     
-      .download-text {
-        
-        font-size: 14px;
-        font-family: Roboto, Arial, sans-serif;
-        font-weight: bold;
-      }
-      .clip{
+      .comment-interactions{
         display: grid;
-        grid-template-columns: 0.5fr 2fr;
-        align-items: center;
-         justify-content: center;
-      }
-      
-      .clip-icon {
-        height: 20px;
-        
-      }
-     
-      .clip-text {
-        
-        font-size: 14px;
-        font-family: Roboto, Arial, sans-serif;
-        font-weight: bold;
-      }
-      .save{
-        display: grid;
-        grid-template-columns: 0.5fr 2fr;
-        align-items: center;
-         justify-content: center;
-      }
-      
-      .save-icon {
-        height: 20px;
-        
-      }
-     
-      .save-text {
-        
-        font-size: 14px;
-        font-family: Roboto, Arial, sans-serif;
-        font-weight: bold;
-      }
-      .video-extras{
-        display: grid;
-        grid-template-columns: 472px 472px;
+        grid-template-columns: 40px 25px 50px;
         column-gap: 12px;
       }
-      .youtube-channel{
-        display: grid;
-        grid-template-columns: 60px 270px 140px;
-        border-radius: 6px;
-        height: 47px;
-         border: 1px solid #e4dcdcb8;
-         margin-top:30px;
+      .music{
+        font-size: 15px;
+        font-family: "Roboto", Arial, sans-serif;
+        color: black;
+        font-weight: bolder;
       }
-      .comments-video{
-        
-        border-radius: 6px;
-        height: 47px;
-         border: 1px solid #e9dedeb8;
-         margin-top:30px;
-      }
-      .pic{
-        margin-top: 6px;
-        margin-left: 12px;
-        width:36px;
-        border-radius: 18px;
-      }
-     
-      .name{
-        line-height: 0px;
-        font-size: 14px;
-        font-weight: 600;
-        font-family: Roboto, Arial, sans-serif;
-        
-      }
-      .suscriptores{
-        font-size: 12px;
-        font-family: Roboto, Arial, sans-serif;
-        color:#606060;
-        margin: 0px;
-      }
-      .suscribirme-btn {
-        background-color: #CC0000;
-        font-family: "Roboto","noto", sans-serif;
-        font-size: 13px;
-        color:white;
-        height: 36px;
-        width: 127px;
-        border-radius: 3px ;
-        border: none;
-        margin-top: 5px;
-        margin-right: 5px;
-      }
-      .comments-box{
-        display: grid;
-        grid-template-columns: 100px 20px 300px;
-        column-gap: 5px;;
-        border-radius: 6px;
-        height: 47px;
-         border: 1px solid #e4dcdcb8;
-         margin-top:30px;
-         
-
-      }
-     
-      .comentarios-text{
-        
-        font-family:"Roboto",Arial, sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        margin-bottom: 1px;
-        margin-left: 7px;
-        margin-top: 9px;
-      }
-      .comentarios-number{
-        font-family:"Roboto",Arial, sans-serif;
-        font-size: 12px;
-        color:#606060;
-        margin: 0;
-        margin-left: 7px;
-      }
-      .comentario-picture{
-        height: 20px;
-        width: 20px;
-        border-radius: 10px;
-        margin-left: 5px;
-        margin-top: 6px;
-        
-      }
-      .comentario-text{
-        margin-left: 10px;
-        margin-top: 10px;
+      .time{
         font-size: 12px;
         font-family: "Roboto", Arial, sans-serif;
+        color: #606060
+        
+      }
+      .comment-text{
+        font-size: 14px;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .leer-mas{
+        font-size: 14px;
+        font-family: "Roboto", Arial, sans-serif;
+        color: #606060;
+      }
+      .comment-like{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 1px;
+      }
+      .like-comment{
+        height: 12px;
+        width: 12px;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .responder{
+        font-size: 14px;
+        color: #606060;
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .n-likes{
+        font-size: 14px;
+        color: #606060;
+        font-family: "Roboto", Arial, sans-serif;
+        
+      }
+      .nomegusta{
+        height: 13px;
+        width: 22px;
+      }
+      .comment-respuestas{
+        font-family: "Roboto", Arial, sans-serif;
+        color: #065FD4;
+        font-size: 14px;
+        font-weight: bold;
+
+      }
+      .video-list{
+        margin-top: 24px ;
+        display:grid;
+        row-gap: 6px;
+      }
+      .video1{
+        display: grid;
+        grid-template-columns: 168px 200px;
+        column-gap: 6px;
+      }
+      .video-information{
+        
+        font-family: "Roboto", Arial, sans-serif;
+      }
+      .title-vid{
+        font-size: 14px;
+        font-weight: 600;
+        
+      }
+      .channel-vid{
+        font-size: 12px;
+        color: #606060;
+        margin-top :6px;
+      }
+      .views-vid{
+        font-size: 12px;
+        color: #606060;
+        margin-top:4px;
       }
     </style>
   </head>
   <body>
     <header class="header">
       <div class="left-section">
-        <img class="hamburger-icon" src="hamburger-menu.svg" />
-        <img class="youtube-logo" src="yt_logo_jjgys4.png" />
+        <img class="hamburger-icon" src="icons/hamburger-menu.svg" />
+        <img class="youtube-logo" src="icons/yt_logo_jjgys4.png" />
       </div>
 
       <div class="middle-section">
         <input class="search-bar" type="text" placeholder="Search" />
 
         <button class="search-btn">
-          <img class="search-icon" src="search.svg" />
+          <img class="search-icon" src="icons/search.svg" />
         </button>
         <button class="voice-btn">
-          <img class="voice-icon" src="voice-search-icon.svg" />
+          <img class="voice-icon" src="icons/voice-search-icon.svg" />
         </button>
       </div>
 
       <div class="rigth-section">
-        <img class="upload-icon" src="upload.svg" />
-        <img class="notifications-icon" src="notifications.svg" />
+        <img class="upload-icon" src="icons/upload.svg" />
+        <img class="notifications-icon" src="icons/notifications.svg" />
 
-        <img class="channel-pic" src="unnamed.jpeg" />
+        <img class="channel-pic" src="pics/unnamed.jpeg" />
       </div>
     </header>
-
     <div class="center">
       <div class="main">
         <div class="main-inner">
           <div class="video-player">
             <div class="video">
-              <iframe
-                width="963"
-                height="540"
-                src="https://www.youtube.com/embed/lJIrF4YjHfQ"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
+              
+              <iframe width="948" height="540" src="https://www.youtube.com/embed/ZuSTDk8bORE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
             </div>
-            <div class="video-metadata">
+            </div>
+          <div class="video-metadata">
               <div class="video-hast">#Autumn #Fall #IndieFolk</div>
               <div class="video-title">
                 Indie/Indie-Folk Compilation - Autumn/Fall 2022 🍂 (2½-Hour
@@ -413,31 +212,31 @@
                   <a class="like">
                     <img
                       class="like-icon"
-                      src="11-114955_transparent-like-icon-png-youtube-like-button-svg.png"
+                      src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png"
                     />
                     <text class="likes">5489</text>
                   </a>
 
                   <a class="not-like">
-                    <img class="not-like-icon" src="nomegusta.png">
+                    <img class="not-like-icon" src="icons/nomegusta.png">
 
                     <text class="not-like-text">No me gusta</text>
                   </a>
                   <a class="share">
-                    <img class="share-icon" src="png-transparent-computer-icons-share-icon-youtube-share-icon-icon-download-symbol.png">
+                    <img class="share-icon" src="icons/png-transparent-computer-icons-share-icon-youtube-share-icon-icon-download-symbol.png">
                     <text class="share-text">Compartir</text>
                     </a>
 
                   <a class="download">
-                    <img class="download-icon" src="download.png">
+                    <img class="download-icon" src="icons/download.png">
                     <text class="download-text"> Descargar</text>
                     </a>
                     <a class="clip">
-                      <img class="clip-icon" src="tijeras.png">
+                      <img class="clip-icon" src="icons/tijeras.png">
                       <text class="clip-text">  Clip</text>
                       </a>
                       <a class="save">
-                        <img class="save-icon" src="download.png">
+                        <img class="save-icon" src="icons/download.png">
                         <text class="save-text"> Guardar</text>
                         </a>
                   <a class="..."><strong>...</strong></a>
@@ -446,7 +245,7 @@
                 <div class="video-extras">
                   <div class="youtube-channel">
                     <div class="picture-channel">
-                      <img class="pic" src="alexpic.jpeg">
+                      <img class="pic" src="pics/alexpic.jpeg">
                     </div>
                     <div class="channel-nickname">
                       <text class="name">alexrainbirdMusic</text>
@@ -462,7 +261,7 @@
                       <p class="comentarios-number">197</p>
                     </div>
                     <div class="comment-picture">
-                    <img class="comentario-picture" src="channels4_profile.jpeg">
+                    <img class="comentario-picture" src="pics/channels4_profile.jpeg">
                   </div>
                     <div class="comentario-text">To anyone who's reading this, ITS GOING TO BE OK. I pray that whatever is hurting you or whatever you...</div>
                   </div>
@@ -470,10 +269,264 @@
 
               </div>
             </div>
+          <div class="comments-section">
+            <div class="comments-filter">
+              <div class="comments-n"> 197 comentarios</div>
+              <div class="order">
+                <img class="order-icon" src="icons/filter.png"></img>
+                <div class="ordenar-por">ORDENAR POR</div>
+              </div>
+            </div>
+            <div class="all-comments">
+              <div class="comment-1">
+                <img class="comment-pic" src="pics/channels4_profile.jpeg"></img>
+                <div class="comment-details">
+                  <div class="comment-channel">
+                    <text class="music">MUSIC</text>
+                    <text class="time">hace 4 semanas</text>
+                  </div>
+                  <div class="comment-text">To anyone who's reading this, ITS GOING TO BE OK. I pray that whatever is hurting you or whatever you are constantly stressing about gets better. May the dark thoughts, and the doubt exit yourmind right now and may clarity and understand replace confusion. I declare peace and calmness to fill your life.💯💯❤️❤️</div>
+                  
+                  <div class="comment-interactions">
+                    <div class="comment-like" >
+                      <img class="like-comment" src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png">
+                      <text class="n-likes">3678</text>
+                    </div>
+                    <div class="comment-not-like">
+                      <img class="nomegusta" src="icons/nomegusta.png">
+                    </div>
+                    <div class="responder">RESPONDER</div>
+                  </div>
+                  <div class="comment-respuestas"> 6 RESPUESTAS</div>
+                </div>
+              </div>
+            <div class="comment-1">
+                <img class="comment-pic" src="pics/2.jpeg"></img>
+                <div class="comment-details">
+                  <div class="comment-channel">
+                    <text class="music">Viorel Dogari</text>
+                    <text class="time">hace 1 mes</text>
+                  </div>
+                  <div class="comment-text">For every artist here: I just want to let you know that I work with this music on background for a few years now and now is the first time I realized that you are here :), you all do an amazing job <3</div>
+                  
+                  <div class="comment-interactions">
+                    <div class="comment-like" >
+                      <img class="like-comment" src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png">
+                      <text class="n-likes">108</text>
+                    </div>
+                    <div class="comment-not-like">
+                      <img class="nomegusta" src="icons/nomegusta.png">
+                    </div>
+                    <div class="responder">RESPONDER</div>
+                  </div>
+                  <div class="comment-respuestas"> 5 RESPUESTAS</div>
+      
+            </div>
+          </div>
+          <div class="comment-1">
+            <img class="comment-pic" src="pics/3.jpeg"></img>
+            <div class="comment-details">
+              <div class="comment-channel">
+                <text class="music">Ryann Volner</text>
+                <text class="time">hace 3 semanas</text>
+              </div>
+              <div class="comment-text">I just wanted to say to every artist on this playlist-
+                Thank you for this. There is not a single song in this playlist that isn't absolutely beautiful. Y'all are truly talented. ❤️💯💯❤️❤️</div>
+              
+              <div class="comment-interactions">
+                <div class="comment-like" >
+                  <img class="like-comment" src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png">
+                  <text class="n-likes">42</text>
+                </div>
+                <div class="comment-not-like">
+                  <img class="nomegusta" src="icons/nomegusta.png">
+                </div>
+                <div class="responder">RESPONDER</div>
+              </div>
+              <div class="comment-respuestas"> 1 RESPUESTA</div>
+            </div>
+          </div>
+          <div class="comment-1">
+            <img class="comment-pic" src="pics/4.jpeg"></img>
+            <div class="comment-details">
+              <div class="comment-channel">
+                <text class="music">BASHAM</text>
+                <text class="time">hace 1 mes</text>
+              </div>
+              <div class="comment-text">Thank you Alex and Beth for including our song 'Every Part of Me' (25:53) on this beautiful playlist. We wrote this track as our first dance song 🤍
+                Love from Oregon!</div>
+              
+              <div class="comment-interactions">
+                <div class="comment-like" >
+                  <img class="like-comment" src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png">
+                  <text class="n-likes">75</text>
+                </div>
+                <div class="comment-not-like">
+                  <img class="nomegusta" src="icons/nomegusta.png">
+                </div>
+                <div class="responder">RESPONDER</div>
+              </div>
+              <div class="comment-respuestas"> 7 RESPUESTAS</div>
+            </div>
+          </div>
+        
+          <div class="comment-1">
+            <img class="comment-pic" src="pics/5.jpeg"></img>
+            <div class="comment-details">
+              <div class="comment-channel">
+                <text class="music">Aaron Percy</text>
+                <text class="time">hace 1 mes</text>
+              </div>
+              <div class="comment-text">"in your circle" was written about memories in fall, and i'm so grateful you chose to include it on your playlist. autumn is my favorite time of year to listen to music :)</div>
+              <div class="leer-mas">Leer más</div>
+              <div class="comment-interactions">
+                <div class="comment-like" >
+                  <img class="like-comment" src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png">
+                  <text class="n-likes">43</text>
+                </div>
+                <div class="comment-not-like">
+                  <img class="nomegusta" src="icons/nomegusta.png">
+                </div>
+                <div class="responder">RESPONDER</div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="comment-1">
+            <img class="comment-pic" src="pics/6.jpeg"></img>
+            <div class="comment-details">
+              <div class="comment-channel">
+                <text class="music">Yuul Sound</text>
+                <text class="time">hace 1 mes</text>
+              </div>
+              <div class="comment-text">
+          
+                Hey guys! Thanks so much for adding us with 'Feel' first on the tracklist!! ❤💯💯❤️❤️</div>
+              
+              <div class="comment-interactions">
+                <div class="comment-like" >
+                  <img class="like-comment" src="icons/11-114955_transparent-like-icon-png-youtube-like-button-svg.png">
+                  <text class="n-likes">29</text>
+                </div>
+                <div class="comment-not-like">
+                  <img class="nomegusta" src="icons/nomegusta.png">
+                </div>
+                <div class="responder">RESPONDER</div>
+              </div>
+              <div class="comment-respuestas"> 3 RESPUESTAS</div>
+            </div>
+          </div>
           </div>
         </div>
       </div>
-      <div id="rigth-side" class="rigth-side"
+      </div>
+      <div  class="rigth-side">
+        <div class="video-list">
+
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/-sR9FHi_gks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Hollow Coves-From the Woods to the Coastline</div>
+            <div class="channel-vid">Apeiron</div>
+            <div class="views-vid">6,3 M de visualizaciones &#183; hace 1 año</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/HxAkpLrW7cQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Lost in The Wilderness - An Indie/Folk/Alternative Playlist</div>
+            <div class="channel-vid">alexrainbirdMusic</div>
+            <div class="views-vid">234.574 de visualizaciones &#183; hace 1 mes</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/XS7D_0EIcgs?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Into The Woods 🌲 - A Mysterious Folk/Pop Playlist</div>
+            <div class="channel-vid">alexrainbirdMusic</div>
+            <div class="views-vid">5,5 M de visualizaciones &#183; hace 2 año</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/NjFbdoOq-Gk?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Calm Places 🕯️ - A Safe & Comforting Folk/Pop Playlist</div>
+            <div class="channel-vid">alexrainbirdMusic</div>
+            <div class="views-vid">6497.530 visualizaciones &#183; hace 5 meses</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94"  src="https://www.youtube.com/embed/1Lmyq1yBpjs?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Cozy Coffeehouse ☕ - An Indie/Folk/Acoustic Playlist | Vol. 2</div>
+            <div class="channel-vid">alexrainbirdMusic</div>
+            <div class="views-vid">3 M de visualizaciones &#183; hace 3 años</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/-pe6sbAd_vs?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">COZY AUTUMN AMBIENCE (HYGGE Moments) - 1 Hour of acoustic songs</div>
+            <div class="channel-vid">SOUNDRISE</div>
+            <div class="views-vid">3275 visualizaciones &#183; hace 1 mes</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/JB_iylafXiQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">HELLO SUNSHINE ☀️ - A Summer Indie/Folk/Pop Playlist</div>
+            <div class="channel-vid">alexrainbirdMusic</div>
+            <div class="views-vid">2,7 M de visualizaciones &#183; hace 3 años</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/O4iKjQc232k?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Wake Up Happy ☀️⏰ - An Indie/Pop/Folk “Good Morning” Playlist | Vol. II</div>
+            <div class="channel-vid">alexrainbirdMusic</div>
+            <div class="views-vid">1,2 M de visualizaciones &#183; hace 2 años</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/eU2UP5b5FP4?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">OCTOBER AFTERNOON☀ MUSIC 2022 | LV BESTMUSIC | Indie/Pop/Folk/Acoustic | Compilation 🎸♫</div>
+            <div class="channel-vid">LV BEST MUSIC</div>
+            <div class="views-vid">51.007 visualizaciones &#183; hace 2 semanas</div>          
+          </div>
+          </div>
+          <div class="video1">
+            <div class="videoplayer" >
+              <iframe width="168" height="94" src="https://www.youtube.com/embed/-sR9FHi_gks" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="video-information">
+            <div class="title-vid">Hollow Coves - From the Woods to the Coastline - ...</div>
+            <div class="channel-vid">Apeiron</div>
+            <div class="views-vid">6,3 M de visualizaciones &#183; hace 1 año</div>          
+          </div>
+          </div>
+        </div>
+      </div>
     </div>
+    
+    
   </body>
 </html>
