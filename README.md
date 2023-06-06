@@ -1,11 +1,12 @@
 
 
 
-#   YOUTUBE PAGE - EXERCISE  <a name="about-project"></a>
+#  📹 YOUTUBE PAGE - EXERCISE  <a name="about-project"></a>
 
 <img width="1440" alt="Screenshot 2023-06-06 at 09 24 54" src="https://github.com/rivasbolinga/Youtube-Page/assets/103900838/1d73487f-a65e-495b-bb9d-bc68c8118c0a">
 
-📹
+
+
 </div>
 
 
@@ -25,10 +26,8 @@
     - [Install](#install)
     - [Usage](#usage)
   - [👥 Authors ](#-authors-)
-  - [🔭 Future Features ](#-future-features-)
   - [⭐️ Show your support ](#️-show-your-support-)
-  - [🙏 Acknowledgments ](#-acknowledgments-)
-  - [📝 License](#license)
+
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -60,7 +59,7 @@ This is one of my first projects working with HTML and CSS with the goal to copy
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-You can see the live version 📍 [here](https://rusticroots.netlify.app/)
+You can see the live version 📍 [here](https://rivasbolinga.github.io/Youtube-Page/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -92,7 +91,7 @@ In order to run this project you need:
 
 
 ```
-git clone https://github.com/rivasbolinga/Rustic-Roots.git
+git clone https://github.com/rivasbolinga/Youtube-Page.git
 ```
 
 - [ ] Open the file in your code editor
@@ -137,7 +136,7 @@ live-server
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [Issues](https://github.com/rivasbolinga/odin-recipes/issues).
+Feel free to check the [Issues](https://github.com/rivasbolinga/Youtube-Page/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
