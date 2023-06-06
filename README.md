@@ -1,11 +1,11 @@
 
-![all-devices-white (1)](https://github.com/rivasbolinga/Rustic-Roots/assets/103900838/740a1355-39be-41a4-913d-ff9719375dfe)
 
 
-#  🪑 YOUTUBE PAGE - EXERCISE  <a name="about-project"></a>
+#   YOUTUBE PAGE - EXERCISE  <a name="about-project"></a>
 
+<img width="1440" alt="Screenshot 2023-06-06 at 09 24 54" src="https://github.com/rivasbolinga/Youtube-Page/assets/103900838/1d73487f-a65e-495b-bb9d-bc68c8118c0a">
 
-
+📹
 </div>
 
 
